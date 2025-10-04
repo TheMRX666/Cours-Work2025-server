@@ -39,7 +39,7 @@ class AuthController extends Controller
 
         if (!Auth::attempt($request->only('email', 'password'))) {
             return response()->json([
-                'message' => 'Неверные учетные данные'
+                'message' => 'Невірний логін або пароль'
             ], 401);
         }
 
