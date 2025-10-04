@@ -18,7 +18,7 @@ class ImageController extends Controller
         ]);
 
         $file = $request->file('image');
-        $path = $file->store('public/images');
+        $path = $file->store("public/products/{$request->product_id}");
 
         $image = Image::create([
             'product_id' => $request->product_id,

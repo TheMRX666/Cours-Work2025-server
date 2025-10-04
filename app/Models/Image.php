@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Storage;
+
 
 /**
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Image create(array $attributes = [])
@@ -25,7 +27,6 @@ class Image extends Model
         'sort_order',
     ];
 
-    // Получаем полный URL для фронта
     public function getUrlAttribute()
     {
         return Storage::url($this->path);

@@ -57,7 +57,7 @@ class ProductController extends Controller
         }
 
         $products->with(['images' => function($query) {
-            $query->where('is_main', true)->orderBy('sort_order');
+            $query->orderBy('sort_order');
         }]);
 
         $paginated = $products->paginate(12)->withQueryString();
